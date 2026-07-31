@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Event Website</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --background: #f8fafc;
+            --text: #1e293b;
+            --card-bg: #ffffff;
+            --accent: #ef4444;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0 20px;
+        }
+        h1 { margin-bottom: 10px; color: #0f172a; }
+        .date { font-weight: bold; color: var(--primary); font-size: 1.2rem; }
+        
+        /* Updates Banner Section */
+        .updates-box {
+            background-color: #fef2f2;
+            border-left: 5px solid var(--accent);
+            padding: 15px 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+        .updates-box h3 { margin: 0 0 5px 0; color: var(--accent); }
+        .updates-box p { margin: 0; font-size: 0.95rem; }
+        .update-time { font-size: 0.8rem; color: #64748b; block; margin-top: 5px; }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        h2 { border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 0; }
+        iframe { width: 100%; border: none; border-radius: 4px; }
+        
+        /* Responsive Embeds */
+        .embed-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🎉 Welcome to Our Event!</h1>
+            <p class="date">Saturday, October 17th @ 6:00 PM</p>
+            <p>123 Event Street, Cityville</p>
+        </header>
+
+        <!-- 📢 LATEST UPDATES BOX -->
+        <!-- Change the text inside the <h3> and <p> tags whenever you have news! -->
+        <div class="updates-box">
+            <h3>📢 Latest Update:</h3>
+            <p><strong>Rain Location Confirmed!</strong> We will be moving indoors to the main hall if it rains. Parking is free on-site.</p>
+            <span class="update-time">Updated: July 31, 2026</span>
+        </div>
+
+        <!-- ABOUT SECTION -->
+        <div class="card">
+            <h2>About the Event</h2>
+            <p>We are so excited to gather our close friends for a night of celebration, food, and great music. Space is limited to 20 people, so please let us know if you can make it by filling out the RSVP form below!</p>
+        </div>
+
+        <!-- SCHEDULE / CALENDAR SECTION -->
+        <div class="card">
+            <h2>Event Schedule</h2>
+            <!-- REPLACE THE SRC BELOW WITH YOUR GOOGLE CALENDAR EMBED LINK -->
+            <iframe src="https://google.com" style="border: 0" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+        </div>
+
+        <!-- RSVP FORM SECTION -->
+        <div class="card">
+            <h2>RSVP Here</h2>
+            <!-- REPLACE THE SRC BELOW WITH YOUR GOOGLE FORM EMBED LINK -->
+            <iframe src="https://google.com" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+    </div>
+
+</body>
+</html>
