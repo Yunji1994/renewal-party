@@ -2,7 +2,7 @@ name = "renewal-party-rsvp"
 main = "worker.js"
 compatibility_date = "2026-07-31"
 type = "javascript"
-account_id = "6dd2d7f1-0fa8-4b9d-9b51-cb6cd4b271bd"
+account_id = "b013f45a2f5b76041fa63b2e92528795"
 workers_dev = true
 
 # Bind your Cloudflare D1 database here.
