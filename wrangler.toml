@@ -1,9 +1,9 @@
-name = "renewal-party-rsvp"
-main = "worker.js"
-compatibility_date = "2026-07-31"
-workers_dev = true
+name = "renewal-party"
+compatibility_date = "2026-01-14"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "./dist"
 
 # Bind your Cloudflare D1 database here.
-d1_databases = [
-  { binding = "RSVP_DB", database_name = "renewal-party" }
-]
+[[d1_databases]]
+binding = "RSVP_DB"
+database_name = "renewal-party"

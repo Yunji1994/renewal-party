@@ -1,0 +1,23 @@
+{
+  "name": "renewal-party",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0",
+    "start": "astro dev --host 0.0.0.0",
+    "build": "astro build",
+    "preview": "astro preview --host 0.0.0.0",
+    "tina": "tinacms dev -c \"npm run dev\"",
+    "deploy:pages": "npm run build && npx wrangler pages deploy dist --project-name=renewal-party"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.0.0",
+    "@aws-sdk/client-s3": "^3.51.0",
+    "@aws-sdk/s3-request-presigner": "^3.51.0",
+    "astro": "^5.0.0",
+    "tinacms": "^2.0.0",
+    "@tinacms/cli": "^1.0.0",
+    "typescript": "^5.6.3"
+  }
+}

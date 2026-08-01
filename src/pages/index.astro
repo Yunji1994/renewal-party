@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const entries = await getCollection('site');
+const page = entries[0]?.data ?? {
+  title: 'Renewal Party',
+  subtitle: 'Join us for a celebration',
+  date: 'Saturday, October 17th @ 6:00 PM',
+  location: '123 Event Street, Cityville',
+  heroImage: '/images/hero-placeholder.svg',
+  updates: 'Rain location confirmed. We will move indoors if necessary.',
+  rsvpCopy: 'Please let us know if you can make it by filling out the form below.',
+};
+---
+
+<Layout title={page.title}>
+  <section class="card">
+    <p><strong>{page.subtitle}</strong></p>
+    <h1>{page.title}</h1>
+    <p>{page.date}</p>
+    <p>{page.location}</p>
+    <img src={page.heroImage} alt={page.title} />
+  </section>
+
+  <section class="card">
+    <h2>Latest update</h2>
+    <p>{page.updates}</p>
+  </section>
+
+  <section class="card">
+    <h2>RSVP</h2>
+    <p>{page.rsvpCopy}</p>
+    <p><a href="/api/r2-presign">Upload an image to R2</a></p>
+  </section>
+</Layout>
