@@ -8,6 +8,7 @@
     "start": "astro dev --host 0.0.0.0",
     "build": "astro build",
     "preview": "astro preview --host 0.0.0.0",
+    "pages:dev": "npm run build && npx wrangler pages dev dist --compatibility-date=2026-01-14 --port 8788",
     "tina": "tinacms dev -c \"npm run dev\"",
     "deploy:pages": "npm run build && npx wrangler pages deploy dist --project-name=renewal-party"
   },
