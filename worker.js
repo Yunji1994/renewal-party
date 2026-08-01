@@ -282,12 +282,26 @@ async function handleRsvp(request, db) {
   const id = crypto.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(16).slice(2)}`;
 
   try {
+    await db.prepare(`
+      CREATE TABLE IF NOT EXISTS rsvps (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        email TEXT NOT NULL,
+        attending TEXT NOT NULL,
+        guests INTEGER NOT NULL DEFAULT 0,
+        dietary TEXT,
+        message TEXT,
+        created_at TEXT NOT NULL
+      )
+    `).run();
+
     await db.prepare(
       `INSERT INTO rsvps (id, name, email, attending, guests, dietary, message, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
     )
       .bind(id, name, email, attending, guests, dietary, message, createdAt)
       .run();
   } catch (error) {
+    console.error('D1 insert error', error);
     return new Response(JSON.stringify({ error: 'Failed to save RSVP' }), {
       status: 500,
       headers: jsonHeaders,

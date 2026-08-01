@@ -51,6 +51,19 @@ export async function onRequestPost({ request, env }) {
   const id = crypto.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(16).slice(2)}`;
 
   try {
+    await env.RSVP_DB.prepare(`
+      CREATE TABLE IF NOT EXISTS rsvps (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        email TEXT NOT NULL,
+        attending TEXT NOT NULL,
+        guests INTEGER NOT NULL DEFAULT 0,
+        dietary TEXT,
+        message TEXT,
+        created_at TEXT NOT NULL
+      )
+    `).run();
+
     await env.RSVP_DB.prepare(
       `INSERT INTO rsvps (id, name, email, attending, guests, dietary, message, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
     )
