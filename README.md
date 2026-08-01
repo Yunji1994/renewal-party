@@ -18,6 +18,13 @@ This project now includes a minimal Astro + TinaCMS setup for editing site conte
    npm run dev
 5. Start TinaCMS:
    npm run tina
+6. Start the Pages local runtime:
+   npm run pages:dev
+
+## Deployment
+Use the Pages deploy command instead of a Workers-style deploy:
+- npm run deploy
+- or: npm run deploy:pages
 
 ## Cloudflare R2 setup
 1. Create an R2 bucket.
